@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import {TransferHttpCacheModule} from '@nguniversal/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from './cookie.service';
+import {TestModule} from "./interceptor/test.module";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CookieService } from './cookie.service';
       { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule'}
     ]),
     TransferHttpCacheModule,
-    HttpClientModule
+    HttpClientModule,
+    TestModule.forRoot()
   ],
   providers: [
     CookieService,
